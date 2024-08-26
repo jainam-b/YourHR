@@ -13,7 +13,7 @@ connectDB();
 app.get("/", (req: Request, res: Response) => {
   res.send("YourHR API is running");
 });
-app.use("/user",userRouter)
+app.use("/",userRouter)
 
 const PORT = process.env.PORT || 3000;
 

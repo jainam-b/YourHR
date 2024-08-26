@@ -15,7 +15,7 @@ app.use(express_1.default.json());
 app.get("/", (req, res) => {
     res.send("YourHR API is running");
 });
-app.use("/user", user_1.default);
+app.use("/", user_1.default);
 const PORT = process.env.PORT || 3000;
 // Start the server
 app.listen(PORT, () => {
