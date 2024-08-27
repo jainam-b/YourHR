@@ -10,7 +10,7 @@ const user_1 = __importDefault(require("./routes/user"));
 const app = (0, express_1.default)();
 // Configure CORS
 const corsOptions = {
-    origin: '*',
+    origin: 'https://yourhr-jainam.vercel.app',
 };
 app.use((0, cors_1.default)(corsOptions));
 // Middleware to parse JSON
