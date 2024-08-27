@@ -7,7 +7,7 @@ const app = express();
 
 // Configure CORS
 const corsOptions = {
-  origin: 'https://yourhr-jainam.vercel.app',
+  origin: '*',
   credentials: true,
 };
 app.use(cors(corsOptions));
