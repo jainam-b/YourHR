@@ -8,9 +8,9 @@ const app = express();
 // Configure CORS
 app.use(
   cors({
-    origin: "http://localhost:5173",  // Allow only this origin
-    methods: ["GET", "POST", "PUT", "DELETE"],  // Allow these HTTP methods
-    credentials: true,  // If you need to send cookies or other credentials
+    origin:[ "http://localhost:5173","https://yourhr.vercel.app"], 
+    methods: ["GET", "POST", "PUT", "DELETE"],  
+    credentials: true,  
   })
 );
 
