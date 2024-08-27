@@ -5,7 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {  useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const SignupForm = () => {
   const [input, setInput] = useState({
     name: "",
     email: "",
@@ -182,4 +182,4 @@ const navigate = useNavigate();
   );
 };
 
-export default Signup;
+export default SignupForm;
