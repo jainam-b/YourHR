@@ -1,16 +1,16 @@
-import express, { Request, Response } from "express"; // Use ES6 import for better type support
+import express from "express";
+import cors from "cors";
 import connectDB from "./config/db";
 import userRouter from "./routes/user";
-import cors from "cors";
 
 const app = express();
 
 // Configure CORS
 app.use(
   cors({
-    origin:[ "http://localhost:5173","https://yourhr-jainam.vercel.app"], 
-    methods: ["GET", "POST", "PUT", "DELETE"],  
-    credentials: true,  
+    origin: ["http://localhost:5173", "https://yourhr-jainam.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
   })
 );
 
@@ -21,7 +21,7 @@ app.use(express.json());
 connectDB();
 
 // Root endpoint
-app.get("/", (req: Request, res: Response) => {
+app.get("/", (req, res) => {
   res.send("YourHR API is running");
 });
 
@@ -30,7 +30,6 @@ app.use("/", userRouter);
 
 const PORT = process.env.PORT || 3000;
 
-// Start the server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
