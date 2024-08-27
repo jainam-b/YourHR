@@ -6,12 +6,13 @@ import userRouter from "./routes/user";
 const app = express();
 
 // Configure CORS
-app.use(
-  cors({
-    origin: ["https://yourhr-jainam.vercel.app","http://localhost:5173"],
-    methods: ["GET", "POST", "PUT", "DELETE"]
-  })
-);
+const corsOptions = {
+  origin: ['http://localhost:5173', 'https://yourhr-jainam.vercel.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true, // Ensure credentials are allowed if you're using them
+};
+app.use(cors(corsOptions));
 
 // Middleware to parse JSON
 app.use(express.json());
